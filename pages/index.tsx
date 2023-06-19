@@ -17,6 +17,7 @@ export const getServerSideProps: GetServerSideProps<BreakingNewsPageProps> = asy
   return {
     props: {newsArticles: newsResponse.articles}
   }
+  // error goes to 500 page
 }
 
 export default function BreakingNewsPage({newsArticles} : BreakingNewsPageProps) {
