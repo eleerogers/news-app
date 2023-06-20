@@ -3,22 +3,13 @@ import { NewsArticle, NewsResponse } from "@/models/NewsArticles";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { categorySlugs } from '../../constants'
 
 interface CategoryNewsPageProps {
   newsArticles: NewsArticle[]
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const categorySlugs = [
-    "business", 
-    "entertainment",
-    "general",
-    "health",
-    "science",
-    "sports",
-    "technology"
-  ]
-
   const paths = categorySlugs.map(slug => ({
     params: { category: slug }
   }))
